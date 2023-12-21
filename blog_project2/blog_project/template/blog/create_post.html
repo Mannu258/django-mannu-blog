@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+{% extends 'blog/base.html' %}
+{% block title_content%}Create Post{%endblock%}
+
+{%block content%}
+<div class="container" style="border:orange; border-width:5px; border-style:solid;">
+    <div >
+    <form method="post">
+        {{form.as_p}}
+        {%csrf_token%}
+        <input type='Submit'>
+    </form>
+</div>
+</div>
+
+{%endblock%}

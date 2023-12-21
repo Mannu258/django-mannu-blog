@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+{% extends 'blog/base.html' %}
+{% block title_content%}Home page{%endblock%}
+
+{%block content%}
+<div class="owl-carousel owl-theme">
+    {% for cat in cats %}
+    <div class="card-item">
+        <div class="img-container">
+            <img src="/media/{{cat.image}}" class="responsive-img">
+        </div>
+        <div class="card-content">
+            <div class="card-title">
+                {{cat.title}}
+            </div>
+            <p class="truncate">{{cat.description}}</p>
+            <div class="container center-align">
+                <a class="btn bg-primary" href="/category/{{cat.url}}">View</a>
+            </div>
+        </div>
+        
+    </div>
+    {%endfor%}
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col s12">
+            {%for p in post%}
+            {{p.content |truncatewords:62| safe}}
+
+            <div class="mt20">
+                <br><a href="blog/{{p.url}}" class="btn bg-primary">Read More ...</a>
+
+            </div>
+
+            <div class="col s12 s4">
+                <img src="media/{{p.image}}" class="responsive-img">
+            </div>
+            {%endfor%}
+
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+{%endblock%}

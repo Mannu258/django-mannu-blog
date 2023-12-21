@@ -1,0 +1,31 @@
+<nav class="bg-primary">
+    <div class="container">
+        <div class="nav-wrapper">
+            <a href="/" class="brand-logo">IBLOGS</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="">ABOUT</a></li>
+                <li><a href="forms">create Blog</a></li>
+                <li><a href="/admin">ADMIN</a></li>
+                <li><a class='dropdown-trigger btn' href='#' data-target='dropdown1'>CATEOGRY</a></li>
+            </ul>
+        </div>
+</nav>
+
+</div>
+<!-- Dropdown Trigger -->
+
+
+<!-- Dropdown Structure -->
+<!-- <ul id='dropdown1' class='dropdown-content'>
+    <li><a href="#!">one</a></li>
+    <li><a href="#!">two</a></li>
+    <li class="divider" tabindex="-1"></li>
+    <li><a href="#!">three</a></li>
+    <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
+    <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
+</ul> -->
+<ul id='dropdown1' class='dropdown-content'>
+    {% for cat in cats %}
+    <li><a href="/category/{{cat.url}}">{{cat.title}}</a></li>
+    {%endfor%}
+</ul>
